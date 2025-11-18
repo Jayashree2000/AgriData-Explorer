@@ -14,7 +14,7 @@ WHERE
 ORDER BY 
     year, Rice_Production DESC;
     
-   #2.Top 5 Districts by Wheat Yield Increase Over the Last 5 Years
+#2.Top 5 Districts by Wheat Yield Increase Over the Last 5 Years
 select dist_name,
 (sum(if(year=(select max(year) from agri_data), wheat_yield_kg_per_ha, null)) -
  sum(if(year=(select max(year)-4 from agri_data), wheat_yield_kg_per_ha, null))) as yield_increase
